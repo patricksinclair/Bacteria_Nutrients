@@ -189,21 +189,21 @@ public class BioSystem {
         int bacteriaIndex = 0;
 
         forloop:
-        for(int i = 0; i < getL(); i++){
+        for(int i = 0; i < getL(); i++) {
 
-            if((indexCounter + microhabitats[i].getN()) < randomIndex){
+            if(microhabitats[i].getN() > 0) {
+                if((indexCounter + microhabitats[i].getN()) < randomIndex) {
 
-                indexCounter += microhabitats[i].getN();
-                continue forloop;
-            }
-            else{
-                microHabIndex = i;
-                bacteriaIndex = randomIndex - indexCounter;
-                if(bacteriaIndex > 0) bacteriaIndex -= 1;
-                break forloop;
+                    indexCounter += microhabitats[i].getN();
+                    continue forloop;
+                } else {
+                    microHabIndex = i;
+                    bacteriaIndex = randomIndex - indexCounter;
+                    if(bacteriaIndex > 0) bacteriaIndex -= 1;
+                    break forloop;
+                }
             }
         }
-
         Microhabitat randMicroHab = microhabitats[microHabIndex];
         int S = randMicroHab.getS(); double K_prime = randMicroHab.getK_prime(), c = randMicroHab.getC();
         Bacteria randBac = randMicroHab.getBacteria(bacteriaIndex);
