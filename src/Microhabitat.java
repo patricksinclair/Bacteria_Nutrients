@@ -98,7 +98,7 @@ public class Microhabitat {
     }
 
     public void consumeNutrients(){
-        if(S > 0) S = S - 1;
+        if(S > 0) S--;
     }
 
 

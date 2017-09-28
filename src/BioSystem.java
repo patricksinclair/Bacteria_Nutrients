@@ -16,6 +16,7 @@ public class BioSystem {
     private int S;
     //boolean which is true when the system mutates to the final possible genotype
     private boolean resistanceReached;
+    private boolean populationDead = false;
 
     Random rand = new Random();
 
@@ -88,7 +89,6 @@ public class BioSystem {
         microhabitats[0].fillWithWildType(finalGenotype);
     }
 
-    public BioSystem(){}
 
 
     public int getL(){return L;}
@@ -110,6 +110,9 @@ public class BioSystem {
 
     public boolean getResistanceReached(){return resistanceReached;}
     public void setResistanceReached(boolean resistanceReached){this.resistanceReached = resistanceReached;}
+
+    public boolean getPopulationDead(){return populationDead;}
+    public void setPopulationDead(boolean populationDead){this.populationDead = populationDead;}
 
     //returns the total number of bacteria in the system
     public int getCurrentPopulation(){
@@ -180,48 +183,59 @@ public class BioSystem {
 
 
 
+
+
+
     public void performAction(){
 
         //selects a random bacteria from the total population
-        int randomIndex = rand.nextInt(getCurrentPopulation());
-        int indexCounter = 0;
-        int microHabIndex = 0;
-        int bacteriaIndex = 0;
+        if(!populationDead) {
 
-        forloop:
-        for(int i = 0; i < getL(); i++) {
+            int randomIndex = rand.nextInt(getCurrentPopulation());
+            int indexCounter = 0;
+            int microHabIndex = 0;
+            int bacteriaIndex = 0;
 
-            if(microhabitats[i].getN() > 0) {
-                if((indexCounter + microhabitats[i].getN()) < randomIndex) {
+
+            forloop:
+            for(int i = 0; i < getL(); i++) {
+
+                //added <= now get Exception in thread "AWT-EventQueue-0" java.lang.IllegalArgumentException: bound must be positive
+                if((indexCounter + microhabitats[i].getN()) <= randomIndex) {
 
                     indexCounter += microhabitats[i].getN();
                     continue forloop;
                 } else {
                     microHabIndex = i;
                     bacteriaIndex = randomIndex - indexCounter;
-                    if(bacteriaIndex > 0) bacteriaIndex -= 1;
+                    //if(bacteriaIndex > 0) bacteriaIndex -= 1;
                     break forloop;
                 }
+
             }
+
+
+            Microhabitat randMicroHab = microhabitats[microHabIndex];
+            int S = randMicroHab.getS();
+            double K_prime = randMicroHab.getK_prime(), c = randMicroHab.getC();
+            Bacteria randBac = randMicroHab.getBacteria(bacteriaIndex);
+
+            double migRate = randBac.getB();
+            double deaRate = randBac.getD();
+            double repliRate = randBac.replicationRate_Nutrients(c, K_prime, S);
+            //System.out.println(S);
+            double R_max = 1.2;
+            double rando = rand.nextDouble()*R_max;
+
+            if(rando < migRate) migrate(microHabIndex, bacteriaIndex);
+            else if(rando >= migRate && rando < (migRate + deaRate)) death(microHabIndex, bacteriaIndex);
+            else if(rando >= (migRate + deaRate) && rando < (migRate + deaRate + repliRate))
+                replicate(microHabIndex, bacteriaIndex);
+
+            timeElapsed += 1./((double) getCurrentPopulation()*R_max);
+            if(getCurrentPopulation() == 0) populationDead = true;
         }
-        Microhabitat randMicroHab = microhabitats[microHabIndex];
-        int S = randMicroHab.getS(); double K_prime = randMicroHab.getK_prime(), c = randMicroHab.getC();
-        Bacteria randBac = randMicroHab.getBacteria(bacteriaIndex);
-
-        double migRate = randBac.getB();
-        double deaRate = randBac.getD();
-        double repliRate = randBac.replicationRate_Nutrients(c, K_prime, S);
-        //System.out.println(S);
-        double R_max = 1.2;
-        double rando = rand.nextDouble()*R_max;
-
-        if(rando < migRate) migrate(microHabIndex, bacteriaIndex);
-        else if(rando >= migRate && rando < (migRate + deaRate)) death(microHabIndex, bacteriaIndex);
-        else if(rando >= (migRate + deaRate) && rando < (migRate + deaRate + repliRate)) replicate(microHabIndex, bacteriaIndex);
-
-        timeElapsed += 1./((double)getCurrentPopulation()*R_max);
     }
-
 
     public static void displayPopulationNumbers(){
 

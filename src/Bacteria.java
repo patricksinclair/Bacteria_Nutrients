@@ -10,7 +10,7 @@ public class Bacteria {
     //migration rate: probability the bacterium migrates from one microhabitat to a neighbouring one
     private double b = 0.1;
     //death rate
-    private double d = 0.1;
+    private double d = 0.001;
     //mutation rate
     private double mu = 1e-4;
 
