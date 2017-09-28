@@ -171,8 +171,10 @@ public class BioSystem {
 
         Bacteria childBac = new Bacteria(m, finalM);
         if(s < mu/2.) {
+            parentBac.increaseGenotype();
             childBac.increaseGenotype();
         } else if(s >= mu/2. && s < mu) {
+            parentBac.decreaseGenotype();
             childBac.decreaseGenotype();
         }
         microhabitats[currentL].addABacterium(childBac);
@@ -196,7 +198,6 @@ public class BioSystem {
             int microHabIndex = 0;
             int bacteriaIndex = 0;
 
-
             forloop:
             for(int i = 0; i < getL(); i++) {
 
@@ -214,7 +215,6 @@ public class BioSystem {
 
             }
 
-
             Microhabitat randMicroHab = microhabitats[microHabIndex];
             int S = randMicroHab.getS();
             double K_prime = randMicroHab.getK_prime(), c = randMicroHab.getC();
@@ -223,7 +223,6 @@ public class BioSystem {
             double migRate = randBac.getB();
             double deaRate = randBac.getD();
             double repliRate = randBac.replicationRate_Nutrients(c, K_prime, S);
-            //System.out.println(S);
             double R_max = 1.2;
             double rando = rand.nextDouble()*R_max;
 

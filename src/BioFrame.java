@@ -57,7 +57,7 @@ class BioPanel extends JPanel{
 
 
     public void monteAnimate(){
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 10000; i++){
             bioSys.performAction();
         }
         repaint();
@@ -74,7 +74,7 @@ class BioPanel extends JPanel{
 
 public class BioFrame extends JFrame {
 
-    int L = 500, K = 100, S = 100;
+    int L = 500, K = 100, S = 1000;
     double alpha = 0.05;
 
     BioPanel bioPan;
