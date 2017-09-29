@@ -25,6 +25,12 @@ public class Bacteria {
         this.finalM = finalM;
     }
 
+    public Bacteria(int m, int finalM, double d){
+        this.m = m;
+        this.finalM = finalM;
+        this.d = d;
+    }
+
     //get and sets for genotype
     public int getM(){
         return m;

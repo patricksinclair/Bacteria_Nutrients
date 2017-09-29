@@ -18,6 +18,8 @@ public class BioSystem {
     private boolean resistanceReached;
     private boolean populationDead = false;
 
+    private int highestGenotype = 0;
+
     Random rand = new Random();
 
     private Microhabitat[] microhabitats;
@@ -161,26 +163,26 @@ public class BioSystem {
         Bacteria parentBac = microhabitats[currentL].getBacteria(bacteriumIndex);
         int m = parentBac.getM();
         int finalM = parentBac.getFinalM();
+        double d = parentBac.getD();
+
+        Bacteria childBac = new Bacteria(m, finalM, d);
 
         //only allows replication if the habitat isn't at carrying capacity //removed
-
-
         //these are used to determine whether or not the replicated bacterium is a mutant
         double mu = parentBac.getMu();
         double s = rand.nextDouble();
 
-        Bacteria childBac = new Bacteria(m, finalM);
         if(s < mu/2.) {
             parentBac.increaseGenotype();
             childBac.increaseGenotype();
+
         } else if(s >= mu/2. && s < mu) {
             parentBac.decreaseGenotype();
             childBac.decreaseGenotype();
         }
+
         microhabitats[currentL].addABacterium(childBac);
         if(childBac.getM() == childBac.getFinalM()) resistanceReached = true;
-        //if(childBac.getM() >2  && currentL > 3) System.out.println("random genotype: " + childBac.getM());
-
     }
 
 
@@ -235,6 +237,7 @@ public class BioSystem {
             if(getCurrentPopulation() == 0) populationDead = true;
         }
     }
+
 
     public static void displayPopulationNumbers(){
 
@@ -358,4 +361,19 @@ public class BioSystem {
     }
 
 
+
+    public static void nutrientHeatMap(){
+
+        int nPoints = 20, nReps = 10;
+        String filename = "nutrients_vs_deathRate";
+
+        double initD = 0.01, finalD = 0.1;
+        double dIncrement = (finalD - initD)/(double)nPoints;
+
+        int initS = 100, finalS = 1500;
+        int SIncrement = (finalS - initS)/nPoints;
+
+
+
+    }
 }
