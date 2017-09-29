@@ -252,6 +252,7 @@ public class BioSystem {
                 replicate(microHabIndex, bacteriaIndex);
 
             timeElapsed += 1./((double)getCurrentPopulation()*R_max);
+            //move this to the death() method
             if(getCurrentPopulation() == 0) populationDead = true;
         }
     }
@@ -383,7 +384,7 @@ public class BioSystem {
 
     public static void nutrientHeatMap(){
 
-        int nPoints = 20, nReps = 10;
+        int nPoints = 50, nReps = 10; int counter = 0;
         String filename = "nutrients_vs_deathRate";
 
         int L = 500, K = 100;
@@ -400,42 +401,32 @@ public class BioSystem {
         int SIncrement = (finalS - initS)/nPoints;
 
 
-        for(int i = 0; i < nPoints; i++){
+        for(double d = initD; d <= finalD; d+=dIncrement){
+            dVals.add(d);
 
-            double avgMaxGenotype = 0.;
-            boolean recordedD = false, recordedS = false;
+            for(int S = initS; S <= finalS; S+=SIncrement){
+                sVals.add((double)S);
 
-            ArrayList<Double> tempMVals = new ArrayList<Double>();
+                double avgMaxGenotype = 0.;
 
-            for(int r = 0; r < nReps; r++){
-            //actual experiment
-            ////////////////////////////////////////////////////////////////////////////////////////////
-                for(double d = initD; d <= finalD; d+=dIncrement){
-                    if(!recordedD) dVals.add(d);
-                    recordedD = true;
+                for(int r = 0; r < nReps; r++){
+                    BioSystem bs = new BioSystem(L, K, S, finalM, alpha, d);
 
-                    for(int S = initS; S <= finalS; S+=SIncrement){
-                        if(!recordedS) sVals.add((double)S);
-                        recordedS = true;
-
-                        BioSystem bs = new BioSystem(L, K, S, finalM, alpha, d);
-
-                        whileloop:
-                        while(true){
-                            bs.performAction();
-                            if(bs.getResistanceReached() || bs.getPopulationDead()) break whileloop;
-                        }
-
-                        tempMVals.add((double)bs.getHighestGenotypeReached());
+                    whileloop:
+                    while(true){
+                        bs.performAction();
+                        if(bs.getResistanceReached() || bs.getPopulationDead()) break whileloop;
                     }
+
+                    avgMaxGenotype += bs.getHighestGenotypeReached();
+                    System.out.println("counter: "+counter+"\t rep: "+r);
                 }
 
-                avgMaxGenotype += tempMVals.stream().mapToDouble(val -> val).average().getAsDouble();
-             ////////////////////////////////////////////////////////////////////////////////////////////
+                mVals.add(avgMaxGenotype/(double)nReps);
             }
-            mVals.add(avgMaxGenotype/(double)nReps);
+            counter++;
         }
 
-        Toolbox.writeThreeArraylistsToFile(dVals, sVals, mVals, filename);
+        Toolbox.writeContoursToFile(dVals, sVals, mVals, filename);
     }
 }

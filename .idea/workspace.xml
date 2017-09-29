@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04e12209-bca1-4372-b592-f8d646beeb74" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bacteria_main.java" afterPath="$PROJECT_DIR$/src/Bacteria_main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BioSystem.java" afterPath="$PROJECT_DIR$/src/BioSystem.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Bacteria_main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bacteria_main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="108">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,26 +47,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BioSystem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BioSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BioSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
+            <state relative-caret-position="581">
+              <caret line="421" column="71" lean-forward="false" selection-start-line="421" selection-start-column="71" selection-end-line="421" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
                 <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
                 <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
-                <element signature="e#9626#9634#0" expanded="true" />
-                <element signature="e#9695#9703#0" expanded="true" />
-                <element signature="e#11011#11019#0" expanded="true" />
-                <element signature="e#11080#11088#0" expanded="true" />
-                <element signature="e#11151#11159#0" expanded="true" />
-                <element signature="e#11222#11230#0" expanded="true" />
-                <element signature="e#12567#12575#0" expanded="true" />
-                <element signature="e#12626#12634#0" expanded="true" />
-                <element signature="e#12685#12693#0" expanded="true" />
-                <element signature="e#13094#13102#0" expanded="true" />
+                <element signature="e#9672#9680#0" expanded="true" />
+                <element signature="e#9741#9749#0" expanded="true" />
+                <element signature="e#11057#11065#0" expanded="true" />
+                <element signature="e#11126#11134#0" expanded="true" />
+                <element signature="e#11197#11205#0" expanded="true" />
+                <element signature="e#11268#11276#0" expanded="true" />
+                <element signature="e#12630#12638#0" expanded="true" />
+                <element signature="e#12689#12697#0" expanded="true" />
+                <element signature="e#12748#12756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +119,8 @@
         <option value="$PROJECT_DIR$/src/Bacteria.java" />
         <option value="$PROJECT_DIR$/src/Microhabitat.java" />
         <option value="$PROJECT_DIR$/src/Toolbox.java" />
-        <option value="$PROJECT_DIR$/src/BioSystem.java" />
         <option value="$PROJECT_DIR$/src/Bacteria_main.java" />
+        <option value="$PROJECT_DIR$/src/BioSystem.java" />
       </list>
     </option>
   </component>
@@ -306,12 +304,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33104238" sideWeight="0.50213903" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33104238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33104238" sideWeight="0.49786097" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -327,7 +326,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -396,16 +394,15 @@
             <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
-            <element signature="e#9626#9634#0" expanded="true" />
-            <element signature="e#9695#9703#0" expanded="true" />
-            <element signature="e#11011#11019#0" expanded="true" />
-            <element signature="e#11080#11088#0" expanded="true" />
-            <element signature="e#11151#11159#0" expanded="true" />
-            <element signature="e#11222#11230#0" expanded="true" />
-            <element signature="e#12567#12575#0" expanded="true" />
-            <element signature="e#12626#12634#0" expanded="true" />
-            <element signature="e#12685#12693#0" expanded="true" />
-            <element signature="e#13094#13102#0" expanded="true" />
+            <element signature="e#9672#9680#0" expanded="true" />
+            <element signature="e#9741#9749#0" expanded="true" />
+            <element signature="e#11057#11065#0" expanded="true" />
+            <element signature="e#11126#11134#0" expanded="true" />
+            <element signature="e#11197#11205#0" expanded="true" />
+            <element signature="e#11268#11276#0" expanded="true" />
+            <element signature="e#12630#12638#0" expanded="true" />
+            <element signature="e#12689#12697#0" expanded="true" />
+            <element signature="e#12748#12756#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -420,6 +417,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bacteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589">
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Microhabitat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -428,14 +441,6 @@
             <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1638#1639#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bacteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-589">
-          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -451,32 +456,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BioSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
+        <state relative-caret-position="581">
+          <caret line="421" column="71" lean-forward="false" selection-start-line="421" selection-start-column="71" selection-end-line="421" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
-            <element signature="e#9626#9634#0" expanded="true" />
-            <element signature="e#9695#9703#0" expanded="true" />
-            <element signature="e#11011#11019#0" expanded="true" />
-            <element signature="e#11080#11088#0" expanded="true" />
-            <element signature="e#11151#11159#0" expanded="true" />
-            <element signature="e#11222#11230#0" expanded="true" />
-            <element signature="e#12567#12575#0" expanded="true" />
-            <element signature="e#12626#12634#0" expanded="true" />
-            <element signature="e#12685#12693#0" expanded="true" />
-            <element signature="e#13094#13102#0" expanded="true" />
+            <element signature="e#9672#9680#0" expanded="true" />
+            <element signature="e#9741#9749#0" expanded="true" />
+            <element signature="e#11057#11065#0" expanded="true" />
+            <element signature="e#11126#11134#0" expanded="true" />
+            <element signature="e#11197#11205#0" expanded="true" />
+            <element signature="e#11268#11276#0" expanded="true" />
+            <element signature="e#12630#12638#0" expanded="true" />
+            <element signature="e#12689#12697#0" expanded="true" />
+            <element signature="e#12748#12756#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
