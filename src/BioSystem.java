@@ -18,7 +18,7 @@ public class BioSystem {
     private boolean resistanceReached;
     private boolean populationDead = false;
 
-    private int highestGenotype = 0;
+    private int highestGenotypeReached = 0;
 
     Random rand = new Random();
 
@@ -40,6 +40,24 @@ public class BioSystem {
         }
         //fills the first microhabitat with bacteria of genotype 1.
         microhabitats[0].fillWithWildType();
+    }
+
+
+    public BioSystem(int L, int K, int S, int finalM, double alpha, double d){
+
+        this.L = L;
+        this.K = K;
+        this.S = S;
+        this.alpha = alpha;
+        this.microhabitats = new Microhabitat[L];
+        this.timeElapsed = 0.;
+        this.resistanceReached = false;
+
+        for(int i = 0; i < L; i++){
+            double c_i = Math.exp(alpha*(double)i) - 1.;
+            microhabitats[i] = new Microhabitat(K, c_i, S);
+        }
+        microhabitats[0].fillWithWildType(finalM, d);
     }
 
     //This constructor is used to create a BioSystem with a uniform drug concentration of value c
@@ -116,6 +134,8 @@ public class BioSystem {
     public boolean getPopulationDead(){return populationDead;}
     public void setPopulationDead(boolean populationDead){this.populationDead = populationDead;}
 
+    public int getHighestGenotypeReached(){return highestGenotypeReached;}
+
     //returns the total number of bacteria in the system
     public int getCurrentPopulation(){
         int runningTotal = 0;
@@ -159,7 +179,7 @@ public class BioSystem {
     public void replicate(int currentL, int bacteriumIndex){
 
         microhabitats[currentL].consumeNutrients();
-        //the bacterium which is going to be replicated and its associated genotype
+        //the bacterium which is going to be replicated and its associated properties
         Bacteria parentBac = microhabitats[currentL].getBacteria(bacteriumIndex);
         int m = parentBac.getM();
         int finalM = parentBac.getFinalM();
@@ -167,7 +187,6 @@ public class BioSystem {
 
         Bacteria childBac = new Bacteria(m, finalM, d);
 
-        //only allows replication if the habitat isn't at carrying capacity //removed
         //these are used to determine whether or not the replicated bacterium is a mutant
         double mu = parentBac.getMu();
         double s = rand.nextDouble();
@@ -176,17 +195,16 @@ public class BioSystem {
             parentBac.increaseGenotype();
             childBac.increaseGenotype();
 
+            if(childBac.getM() > highestGenotypeReached) highestGenotypeReached = childBac.getM();
+            if(childBac.getM() == childBac.getFinalM()) resistanceReached = true;
+
         } else if(s >= mu/2. && s < mu) {
             parentBac.decreaseGenotype();
             childBac.decreaseGenotype();
         }
 
         microhabitats[currentL].addABacterium(childBac);
-        if(childBac.getM() == childBac.getFinalM()) resistanceReached = true;
     }
-
-
-
 
 
 
@@ -233,10 +251,11 @@ public class BioSystem {
             else if(rando >= (migRate + deaRate) && rando < (migRate + deaRate + repliRate))
                 replicate(microHabIndex, bacteriaIndex);
 
-            timeElapsed += 1./((double) getCurrentPopulation()*R_max);
+            timeElapsed += 1./((double)getCurrentPopulation()*R_max);
             if(getCurrentPopulation() == 0) populationDead = true;
         }
     }
+
 
 
     public static void displayPopulationNumbers(){
@@ -367,6 +386,13 @@ public class BioSystem {
         int nPoints = 20, nReps = 10;
         String filename = "nutrients_vs_deathRate";
 
+        int L = 500, K = 100;
+        int finalM = 6; double alpha = 0.02;
+
+        ArrayList<Double> dVals = new ArrayList<Double>();
+        ArrayList<Double> sVals = new ArrayList<Double>();
+        ArrayList<Double> mVals = new ArrayList<Double>();
+
         double initD = 0.01, finalD = 0.1;
         double dIncrement = (finalD - initD)/(double)nPoints;
 
@@ -374,6 +400,42 @@ public class BioSystem {
         int SIncrement = (finalS - initS)/nPoints;
 
 
+        for(int i = 0; i < nPoints; i++){
 
+            double avgMaxGenotype = 0.;
+            boolean recordedD = false, recordedS = false;
+
+            ArrayList<Double> tempMVals = new ArrayList<Double>();
+
+            for(int r = 0; r < nReps; r++){
+            //actual experiment
+            ////////////////////////////////////////////////////////////////////////////////////////////
+                for(double d = initD; d <= finalD; d+=dIncrement){
+                    if(!recordedD) dVals.add(d);
+                    recordedD = true;
+
+                    for(int S = initS; S <= finalS; S+=SIncrement){
+                        if(!recordedS) sVals.add((double)S);
+                        recordedS = true;
+
+                        BioSystem bs = new BioSystem(L, K, S, finalM, alpha, d);
+
+                        whileloop:
+                        while(true){
+                            bs.performAction();
+                            if(bs.getResistanceReached() || bs.getPopulationDead()) break whileloop;
+                        }
+
+                        tempMVals.add((double)bs.getHighestGenotypeReached());
+                    }
+                }
+
+                avgMaxGenotype += tempMVals.stream().mapToDouble(val -> val).average().getAsDouble();
+             ////////////////////////////////////////////////////////////////////////////////////////////
+            }
+            mVals.add(avgMaxGenotype/(double)nReps);
+        }
+
+        Toolbox.writeThreeArraylistsToFile(dVals, sVals, mVals, filename);
     }
 }

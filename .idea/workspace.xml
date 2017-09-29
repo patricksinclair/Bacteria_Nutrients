@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04e12209-bca1-4372-b592-f8d646beeb74" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bacteria.java" afterPath="$PROJECT_DIR$/src/Bacteria.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bacteria_main.java" afterPath="$PROJECT_DIR$/src/Bacteria_main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BioSystem.java" afterPath="$PROJECT_DIR$/src/BioSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Microhabitat.java" afterPath="$PROJECT_DIR$/src/Microhabitat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Toolbox.java" afterPath="$PROJECT_DIR$/src/Toolbox.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Bacteria_main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bacteria_main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="58" lean-forward="false" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+            <state relative-caret-position="54">
+              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -51,22 +48,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BioSystem.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BioSystem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BioSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="779">
+              <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#BioSystem#1;class#BioSystem#0" expanded="false" />
                 <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
                 <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
-                <element signature="e#9011#9019#0" expanded="true" />
-                <element signature="e#9080#9088#0" expanded="true" />
-                <element signature="e#10396#10404#0" expanded="true" />
-                <element signature="e#10465#10473#0" expanded="true" />
-                <element signature="e#10536#10544#0" expanded="true" />
-                <element signature="e#10607#10615#0" expanded="true" />
+                <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
+                <element signature="e#9626#9634#0" expanded="true" />
+                <element signature="e#9695#9703#0" expanded="true" />
+                <element signature="e#11011#11019#0" expanded="true" />
+                <element signature="e#11080#11088#0" expanded="true" />
+                <element signature="e#11151#11159#0" expanded="true" />
+                <element signature="e#11222#11230#0" expanded="true" />
+                <element signature="e#12567#12575#0" expanded="true" />
+                <element signature="e#12626#12634#0" expanded="true" />
+                <element signature="e#12685#12693#0" expanded="true" />
+                <element signature="e#13094#13102#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,12 +117,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Bacteria_main.java" />
         <option value="$PROJECT_DIR$/src/BioFrame.java" />
         <option value="$PROJECT_DIR$/src/Bacteria.java" />
         <option value="$PROJECT_DIR$/src/Microhabitat.java" />
         <option value="$PROJECT_DIR$/src/Toolbox.java" />
         <option value="$PROJECT_DIR$/src/BioSystem.java" />
+        <option value="$PROJECT_DIR$/src/Bacteria_main.java" />
       </list>
     </option>
   </component>
@@ -392,15 +393,19 @@
           <caret line="176" column="41" lean-forward="true" selection-start-line="176" selection-start-column="41" selection-end-line="176" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#BioSystem#1;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
-            <element signature="e#9011#9019#0" expanded="true" />
-            <element signature="e#9080#9088#0" expanded="true" />
-            <element signature="e#10396#10404#0" expanded="true" />
-            <element signature="e#10465#10473#0" expanded="true" />
-            <element signature="e#10536#10544#0" expanded="true" />
-            <element signature="e#10607#10615#0" expanded="true" />
+            <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
+            <element signature="e#9626#9634#0" expanded="true" />
+            <element signature="e#9695#9703#0" expanded="true" />
+            <element signature="e#11011#11019#0" expanded="true" />
+            <element signature="e#11080#11088#0" expanded="true" />
+            <element signature="e#11151#11159#0" expanded="true" />
+            <element signature="e#11222#11230#0" expanded="true" />
+            <element signature="e#12567#12575#0" expanded="true" />
+            <element signature="e#12626#12634#0" expanded="true" />
+            <element signature="e#12685#12693#0" expanded="true" />
+            <element signature="e#13094#13102#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -412,14 +417,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="58" lean-forward="false" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -454,20 +451,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BioSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="779">
+          <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#BioSystem#1;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#2;class#BioSystem#0" expanded="false" />
             <element signature="method#BioSystem#3;class#BioSystem#0" expanded="false" />
-            <element signature="e#9011#9019#0" expanded="true" />
-            <element signature="e#9080#9088#0" expanded="true" />
-            <element signature="e#10396#10404#0" expanded="true" />
-            <element signature="e#10465#10473#0" expanded="true" />
-            <element signature="e#10536#10544#0" expanded="true" />
-            <element signature="e#10607#10615#0" expanded="true" />
+            <element signature="method#BioSystem#4;class#BioSystem#0" expanded="false" />
+            <element signature="e#9626#9634#0" expanded="true" />
+            <element signature="e#9695#9703#0" expanded="true" />
+            <element signature="e#11011#11019#0" expanded="true" />
+            <element signature="e#11080#11088#0" expanded="true" />
+            <element signature="e#11151#11159#0" expanded="true" />
+            <element signature="e#11222#11230#0" expanded="true" />
+            <element signature="e#12567#12575#0" expanded="true" />
+            <element signature="e#12626#12634#0" expanded="true" />
+            <element signature="e#12685#12693#0" expanded="true" />
+            <element signature="e#13094#13102#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bacteria_main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
